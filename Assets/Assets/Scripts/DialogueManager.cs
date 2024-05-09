@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI _nameText;
     public TextMeshProUGUI _dialogueText;
+    
 
 
     private Queue<string> sentences;
@@ -43,8 +44,21 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = sentences.Dequeue();
         Debug.Log(sentence);
-        _dialogueText.text = sentence;
+        //_dialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(Type(sentence));
     }
+
+    IEnumerator Type (string sentence)
+    {
+        _dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            _dialogueText.text += letter;
+            yield return null;
+        }
+    }
+
 
     void EndDialogue()
     {

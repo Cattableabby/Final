@@ -454,6 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nameText: {fileID: 5981476238027623710}
   _dialogueText: {fileID: 4223482296872159870}
+  _typeTime: 500
 --- !u!4 &541180301
 Transform:
   m_ObjectHideFlags: 0
